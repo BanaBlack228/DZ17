@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>DZ17</title>
+</head>
+<body>
+    <button id="myButton">Нажми меня</button>
+<script>
+    function displayString(input) {
+    if (input.length < 4) {
+        throw new Error("Строка должна содержать не менее 4 символов.");
+    }
+    
+    if (/\d/.test(input)) {
+        throw new Error("Строка не должна содержать цифры.");
+    }
+    
+    console.log(input);
+}
+
+try {
+    displayString("Привет"); // Вывод: Привет
+    displayString("123"); // Ошибка: Строка должна содержать не менее 4 символов.
+    displayString("Привет123"); // Ошибка: Строка не должна содержать цифры.
+} catch (error) {
+    console.error(error.message);
+}
+
+        const button = document.getElementById('myButton');
+
+        const handleClick = () => {
+            console.log("Кнопка нажата!");
+        };
+
+        const handleMouseOver = () => {
+            console.log("Мышь над кнопкой!");
+        };
+
+        const handleDoubleClick = () => {
+            console.log("Кнопка дважды нажата!");
+        };
+
+        button.addEventListener('click', handleClick);
+        button.addEventListener('mouseover', handleMouseOver);
+        button.addEventListener('dblclick', handleDoubleClick);
+
+        button.removeEventListener('mouseover', handleMouseOver);
+        button.removeEventListener('dblclick', handleDoubleClick);
+    </script>
+</body>
+</html>
